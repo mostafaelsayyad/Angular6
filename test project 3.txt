@@ -1,3 +1,5 @@
+Note: need to import Ng Model directive and add it FormsModule in the imports array
+
 View code:
 ===========
 
