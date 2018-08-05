@@ -1,0 +1,49 @@
+To send data from parent component to child component
+======================================================
+1. inside app.component.ts
+	public parentVar = "parentData";
+	
+2. inside app.component.html
+	<app-test [parentData] = "parentVar"> </app-test>
+	
+3. inside test.component.ts
+	@Input('parentData') public name;
+	
+4. inside test.component.ts
+	Display that name using interpolation .. {{name}}
+	
+-----------------------	
+To send data from child component to parent component
+=====================================================
+1. inside test.component.ts
+	@Output() public childEvent = new EventEmitter();
+
+2. inside test.component.ts
+	<button (click) = "fireEvent()"> send event </button>
+
+3. inside test.component.ts
+	fireEvent()
+	{
+		this.childEvent.emit('child data');
+	}    
+
+4. inside app.component.html
+<app-test (childEvent) = "childVar=$event" [parentData] = "parentVar"></app-test>
+
+5. inside app.component.ts
+  public childVar = "";
+ 
+6. inside app.component.html
+	{{childVar}}
+	
+	
+------------------------------------------
+pipes
+======
+    <h2> {{date}}</h2>
+    <h2> {{date | date : 'shortDate'}}</h2>
+    <h2> {{date | date : 'shortTime'}}</h2>
+
+    <h2>{{0.25 | currency}} </h2> <!--e default usd-->
+    <h2>{{0.25 | currency:'GBP'}} </h2> 
+    <h2>{{0.25 | currency:'GBP' : 'code'}} </h2> 	
