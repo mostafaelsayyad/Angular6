@@ -1,0 +1,28 @@
+1. create the service
+	ng g s employee
+	
+2. inside service file, create function which returns JSON array
+	getEmployees()
+	{
+	return [
+	{"id" : 1, "name" : "Mostafa"},
+	{"id" : 2, "name" : "Ahmed"}
+
+	];
+
+	
+3. inside app.module.ts, register the service in app module
+	add service class name inside providers array
+	
+4. inside test.component.ts	
+	  private employees = [];
+ constructor(private empSevice : EmployeeService) 
+  {
+  }
+   ngOnInit() 
+  {
+    this.employees = this.empSevice.getEmployees();
+
+  }
+  
+    {{employees | json}}
