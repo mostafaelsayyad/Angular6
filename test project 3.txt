@@ -1,0 +1,52 @@
+View code:
+===========
+
+  <!-- Event binding-->
+  <button (click)="onClickFn()"> Greet </button>
+  <br> <br>
+  <button (click)="onClickFn2($event)"> Greet </button> <!--event is a special variable in angular-->
+  <br><br>
+  <button (click)="onClickFn3()"> Greet </button>
+  {{greeting}}
+  
+  <br><br><br>
+  
+  <!-- 2 way binding -->
+  <input [(ngModel)]="title" type="text" />
+  {{title}}
+
+  <br><br><br>
+  
+  <!-- template reference variable -->
+  <input #myInput type="text" />
+  <button (click)="logMessage(myInput.value)">Log</button> <!--value di el attribute beta3 <input>-->
+  <br><br>
+
+  	  
+----------------------
+Class/logic code:
+==================
+  greeting = "";
+  title = "test";
+  
+  onClickFn()
+  {
+    alert('thank you');
+  }
+  
+  onClickFn2(event)
+  {
+    console.log(event);//check console, you will find many details about this event
+    
+  }
+
+  private onClickFn3(event)
+  {
+    this.greeting = "welcome to IBM ";    
+  }
+
+private logMessage(myInput)
+{
+  console.log(myInput);
+}
+	
