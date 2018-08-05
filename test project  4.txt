@@ -25,7 +25,10 @@ View code:
     </div>
 
     <!------------------------------->
-
+     <div *ngFor="let value of colors">
+        <h2> {{value}} </h2>
+    </div>
+    
     <div *ngFor="let value of colors ; index as i">
         <h2>{{i}}. {{value}} </h2>
     </div>
