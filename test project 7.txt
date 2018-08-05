@@ -1,0 +1,44 @@
+- based on test project 6, duplicate it and rename folder to testProject7
+
+1. Get request from service
+	a. inside app.module.ts, write import command and write it in imports array
+		import { HttpClientModule } from '@angular/common/http';
+	b. inside employee.service.ts
+		- constructor(private http: HttpClient) { }
+		- getEmployees()
+			{
+				return this.http.get(this.url);
+			}
+		- private url = "/assets/data/employees.json";
+		
+	c. crate "data" folder inside assets folder. create json file employees.json
+	[
+    {"id" : 1, "name" : "Mostafa"},
+    {"id" : 2, "name" : "Ahmed"}
+  
+	]
+	
+	
+2. Recieve response in observable, but must create first datatype of this observable	
+	- inside app folder, create file called employee.ts
+		export interface IEmployee
+		{
+		id: number,
+		name: String
+		}
+	
+	- inside employee.service.ts
+	getEmployees() : Observable<IEmployee[]>
+  {
+      return this.http.get<IEmployee[]>(this.url);
+  }
+  
+3. subscribe to observable
+	- inside test.component.ts, ngOnit function
+	ngOnInit() 
+  {
+    this.empSevice.getEmployees()
+      .subscribe(data => this.employees = data);
+
+  }
+	
