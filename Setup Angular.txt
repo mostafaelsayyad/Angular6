@@ -1,0 +1,9 @@
+1. install nodeJS
+	https://nodejs.org/en/
+	node -v
+	npm -v
+2. install angular CLI 
+	https://cli.angular.io/
+	ng -v
+3. install vscode	
+	https://code.visualstudio.com/download
