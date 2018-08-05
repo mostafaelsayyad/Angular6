@@ -1,0 +1,42 @@
+View code:
+===========
+  <div *ngIf="isNameDisplayed; then thenBlock ; else elseBlock"> </div>
+  
+  <ng-template #thenBlock>
+      <h2>
+          Entered in if condition, name appears
+      </h2>
+  </ng-template>
+
+  <ng-template #elseBlock>
+      <h2>
+          Entered in else condition, name is hidden
+      </h2>
+  </ng-template>
+
+    <!----------------------------------->
+
+    <div [ngSwitch] = "color">
+
+        <div *ngSwitchCase="'red'"> color is red</div>
+        <div *ngSwitchCase="'green'"> color is green</div>
+        <div *ngSwitchCase="'blue'"> color is blue</div>
+        <div *ngSwitchDefault> pick again</div>
+    </div>
+
+    <!------------------------------->
+
+    <div *ngFor="let value of colors ; index as i">
+        <h2>{{i}}. {{value}} </h2>
+    </div>
+
+  	  
+----------------------
+Class/logic code:
+==================
+   private isNameDisplayed = false;
+    private color = "red";
+    private colors = ["red","orange","green"];
+	
+	
+	
