@@ -1,0 +1,50 @@
+1. ng new testProject8 --routing
+
+or 
+
+					1. index.html, add below under title
+							  <base href="/">
+						2. in app folder, create new file called app-routing.module.ts .. contains below
+						import { NgModule } from '@angular/core';
+						import { Routes, RouterModule } from '@angular/router';
+
+						const routes: Routes = [];
+
+						@NgModule({
+						  imports: [RouterModule.forRoot(routes)],
+						  exports: [RouterModule]
+						})
+						export class AppRoutingModule { }
+
+
+						3. in app.module.ts
+							import { AppRoutingModule } from './app-routing.module';
+							and add it to imports array
+							
+2. create 2 components
+	ng g c employee-list -it -is
+	ng g c department-list -it -is
+	
+3. inside app-routing.module.ts, define all possible routes
+const routes: Routes = 
+[
+  {path: 'departments', component: DepartmentListComponent },
+  {path: 'employees', component: EmployeeListComponent }
+];	
+
+4. inside app-routing.ts, Enhancement/must do step
+	export const routingComponents = [DepartmentListComponent, EmployeeListComponent];
+	
+5. inside app.module.ts, add routingComponents next to existing AppRoutingModule
+import { AppRoutingModule, routingComponents } from './app-routing.module';
+
+6. inside app.component.html
+<nav> 
+
+<a routerLink="/departments" routerLinkActive="active">Departments </a>
+<a routerLink="/employees" routerLinkActive="active">Employees</a>
+
+</nav>
+
+
+7. copy styles.css
