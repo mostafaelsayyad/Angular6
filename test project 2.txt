@@ -1,0 +1,57 @@
+View code:
+===========
+ <!-- interpolation-->
+      <h2> {{name}} </h2>
+      <h2> {{name.length}} </h2>
+      <h2> {{greetUser()}} </h2>
+      <input type="text" value="{{name}}" /> 
+      
+      <!-- property binding binding-->
+      <input type="text" value="name" /> 
+      <input type="text" [value]="name" />
+      <input type="text" value="name" disabled="{{false}}" />  <!--try change it into true aw false ,msh fahm-->
+      <input type="text" value="name" [disabled]="true" /> 
+
+      <!--class binding -->
+      <h2 class="text-success"> IBM</h2>
+      <h2 [class]="successClass"> IBM 2</h2>
+      <h2 [ngClass]="messageClasses"> IBM 3</h2>
+	  
+	  
+
+  .text-success
+  {
+    color: green;
+  }
+  .text-danger
+  {
+    color: red;
+  }
+  .text-special
+  {
+    font-style: italic;
+  }	  
+
+	  
+----------------------
+Class/logic code:
+==================
+name = "John";
+  
+successClass = "text-success";
+
+hasError = true;
+private isSpecial = true;
+
+private messageClasses = 
+{
+"text-success": !this.hasError,
+"text-danger": this.hasError,
+"text-special": this.isSpecial
+}
+
+greetUser()
+{
+  return "hello " + this.name;
+}	
+	
