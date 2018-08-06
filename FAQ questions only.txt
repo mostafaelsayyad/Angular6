@@ -1,0 +1,8 @@
+1. what is typescript?
+2. what is the benefit of "export class" in angular?
+3. what is the meaning of bootstrap in app.module.ts
+4. what is @component decorator in test.component.ts?
+5. what is .specs.ts file?
+6. 	what is the difference between constructor and ngOnInit?
+7. what is ngModel directive?
+8. what is the difference between imports, declarations, providers in app.module.ts?

@@ -1,0 +1,35 @@
+1. recommended playlist
+	https://www.youtube.com/playlist?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ
+	
+2. what is typescript?
+	- it is an ope source programming language.
+	- it is a superset of javascript and contains all of its elmeents
+	
+3. what is the benefit of "export class" in angular?
+	- we export component to be used by other components
+	
+4. what is the meaning of bootstrap in app.module.ts
+	- bootstrap = kickstart / start
+
+5. what is @component decorator in test.component.ts?
+	- used to tell that this class is not a normal class, it is a component class
+
+6. what is .specs.ts file?
+	- unit test file for testing source code files
+	
+7. 	what is the difference between constructor and ngOnInit?
+	- constructor is used to initialize the class properties
+	- ngOnInit is used after angular creates the component
+	- better use ngOnInit to ensure that component is created and not failed.
+	
+8. what is ngModel directive?
+	- must import FormsModule
+	- used in 2 way binding feature
+	- used to bind data
+	
+9. what is the difference between imports, declarations, providers in app.module.ts?
+	- imports: used to import external modules
+	- declarations: used to make components available to each other within same module
+	- providers: to make service available for other components
+	
+	
