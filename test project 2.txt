@@ -9,7 +9,7 @@ View code:
       <!-- property binding binding-->
       <input type="text" value="name" /> 
       <input type="text" [value]="name" />
-      <input type="text" value="name" disabled="{{false}}" />  <!--try change it into true aw false ,msh fahm-->
+      <input type="text" value="name" disabled="{{false}}" /> 
       <input type="text" value="name" [disabled]="true" /> 
 
       <!--class binding -->
